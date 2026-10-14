@@ -1,0 +1,27 @@
+[project]
+name = "cvrp-bench"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Kush Mazumdar", email = "mazumdarkush2002@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "matplotlib>=3.11.2",
+    "ortools>=9.15.6755",
+    "pandas>=3.0.6",
+    "tabulate>=0.10.0",
+]
+
+[project.scripts]
+cvrp-bench = "cvrp_bench:main"
+
+[build-system]
+requires = ["uv_build>=0.13.0,<0.14.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
