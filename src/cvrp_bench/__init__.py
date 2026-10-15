@@ -1,2 +1,3 @@
-def main() -> None:
-    print("Hello from cvrp-bench!")
+from cvrp_bench.bench import main
+
+__all__=["main"]
