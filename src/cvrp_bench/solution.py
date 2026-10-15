@@ -11,8 +11,8 @@ def route_cost(inst:Instance,route:list[int])->int:
         c+=d[a][b]
     return c
 
-def total_cost(inst:Instance,route:Routes)->int:
-    return sum(route_cost(inst,r) for r in route)
+def total_cost(inst:Instance,routes:Routes)->int:
+    return sum(route_cost(inst,r) for r in routes)
 
 def route_load(inst:Instance,route:list[int])->int:
     return sum(inst.demand[r] for r in route)
@@ -25,7 +25,7 @@ def validate(inst:Instance,routes:Routes)->list[str]:
             if not 1<=c<inst.n:
                 errors.append(f"route {k}: node {c} is not a customer")
             elif c in seen:
-                errors.append(f"customer {c} visited twice (routes {seen[c]} and {k}")
+                errors.append(f"customer {c} visited twice (routes {seen[c]} and {k})")
             else:
                 seen[c]=k
         load=route_load(inst,[c for c in r if 1<=c<inst.n])
